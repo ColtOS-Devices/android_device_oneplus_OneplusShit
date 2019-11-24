@@ -37,8 +37,6 @@ import com.oneplus.shit.settings.HBMModeSwitch;
 import com.oneplus.shit.settings.SRGBModeSwitch;
 import com.oneplus.shit.settings.ShitPanelSettings;
 import com.oneplus.shit.settings.VibratorStrengthPreference ;
-import com.oneplus.shit.settings.VibratorCallStrengthPreference ;
-import com.oneplus.shit.settings.VibratorNotifStrengthPreference ;
 import com.oneplus.shit.settings.utils.FileUtils;
 
 import com.oneplus.shit.settings.dirac.DiracUtils;
@@ -89,8 +87,6 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(ShitPanelSettings.KEY_DCDIM_SWITCH, false);
         restore(DCDimSwitch.getFile(), enabled);
         VibratorStrengthPreference.restore(context);
-        VibratorCallStrengthPreference.restore(context);
-        VibratorNotifStrengthPreference.restore(context);
         DisplayCalibration.restore(context);
         //new DiracUtils(context).onBootCompleted();
         FileUtils.enableService(context);

@@ -52,8 +52,6 @@ public class ShitPanelSettings extends PreferenceFragment
              implements Preference.OnPreferenceChangeListener {
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
 
     /*public static final String KEY_TAPTOWAKE_SWITCH = "taptowake";*/
 
@@ -70,8 +68,6 @@ public class ShitPanelSettings extends PreferenceFragment
 
     private SharedPreferences mPrefs;
     private VibratorStrengthPreference mVibratorStrength;
-    private VibratorCallStrengthPreference mVibratorCallStrength;
-    private VibratorNotifStrengthPreference mVibratorNotifStrength;
     private TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mHBMAutobrightnessSwitch;
     private TwoStatePreference mDCDimSwitch;
@@ -87,16 +83,6 @@ public class ShitPanelSettings extends PreferenceFragment
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
-
-        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
-        if (mVibratorCallStrength != null) {
-            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
-        }
-
-        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
-        if (mVibratorNotifStrength != null) {
-            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
         }
 
         /*mTapToWakeSwitch = (TwoStatePreference) findPreference(KEY_TAPTOWAKE_SWITCH);
