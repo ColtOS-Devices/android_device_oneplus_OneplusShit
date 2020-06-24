@@ -1,3 +1,4 @@
+/*
 package com.oneplus.shit.settings;
 
 import android.service.quicksettings.Tile;
@@ -40,4 +41,4 @@ public class SpectrumTileService extends TileService {
         super.onClick();
     }
 }
-
+*/

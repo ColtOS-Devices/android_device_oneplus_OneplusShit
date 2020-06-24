@@ -65,8 +65,8 @@ public class ShitPanelSettings extends PreferenceFragment
     public static final String KEY_DCDIM_SWITCH = "dcdim";
     public static final String KEY_NIGHT_SWITCH = "night";
     public static final String KEY_ONEPLUS_SWITCH = "oneplus";
-    public static final String SPECTRUM_KEY = "spectrum";
-    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
+    /*public static final String SPECTRUM_KEY = "spectrum";
+    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";*/
 
     private SharedPreferences mPrefs;
     private VibratorStrengthPreference mVibratorStrength;
@@ -75,7 +75,7 @@ public class ShitPanelSettings extends PreferenceFragment
     private TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mHBMAutobrightnessSwitch;
     private TwoStatePreference mDCDimSwitch;
-    private ListPreference mSpectrum;
+    //private ListPreference mSpectrum;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -112,11 +112,11 @@ public class ShitPanelSettings extends PreferenceFragment
         mDCDimSwitch = (TwoStatePreference) findPreference(KEY_DCDIM_SWITCH);
         mDCDimSwitch.setOnPreferenceChangeListener(new DCDimSwitch());
 
-        mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
+        /* mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
         if( mSpectrum != null ) {
             mSpectrum.setValue(SystemProperties.get(SPECTRUM_SYSTEM_PROPERTY, "0"));
             mSpectrum.setOnPreferenceChangeListener(this);
-        }
+        }*/
     }
 
      @Override
@@ -125,11 +125,11 @@ public class ShitPanelSettings extends PreferenceFragment
          final String key = preference.getKey();
          boolean value;
          String strvalue;
-         if (SPECTRUM_KEY.equals(key)) {
+         /*if (SPECTRUM_KEY.equals(key)) {
             strvalue = (String) newValue;
             SystemProperties.set(SPECTRUM_SYSTEM_PROPERTY, strvalue);
             return true;
-        } else if (preference == mHBMAutobrightnessSwitch) {
+        } else*/ if (preference == mHBMAutobrightnessSwitch) {
             Boolean enabled = (Boolean) newValue;
             SharedPreferences.Editor prefChange = mPrefs.edit();
             prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
